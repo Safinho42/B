@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <?php
-session_start();
-include_once './test.php';
- 
+include_once './test.php'; 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (
         isset($_POST["nom"]) &&
@@ -20,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $nom = htmlspecialchars($_POST["nom"]);
         $email = htmlspecialchars($_POST["email"]);
         $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
- 
+
         try {
             $sql = "INSERT INTO users (nom, email, password) VALUES (:nom, :email, :password)";
             $stmt = $pdo->prepare($sql);
@@ -48,3 +47,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </body>
 </html>
+

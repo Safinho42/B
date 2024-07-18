@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,28 +18,4 @@
     </div>
 </body>
 </html>
- 
-<?php
-if (
-    isset($_SESSION["user_email"]) &&
-    isset($_POST["ancien_mdp"]) &&
-    isset($_POST["nouveau_mdp"])
-) {
-    require_once ROOT . "app/controllers/Nouveau_mdp.php";
-    $nouveau_mdp = new \ppe4\controllers\Nouveau_mdp();
-    $nouveau_mdp->modifier_mot_de_passe(
-        $_SESSION["user_email"],
-        $_POST["ancien_mdp"],
-        $_POST["nouveau_mdp"],
-    );
-}
-if (isset($_SESSION["user_email"]) && isset($_POST["ancien_mdp"])) {
-    require_once ROOT . "app/controllers/Nouveau_mdp.php";
-    $nouveau_mdp = new \ppe4\controllers\Nouveau_mdp();
-    $nouveau_mdp->mot_de_passe_utilisateur_valide(
-        $_SESSION["user_email"],
-        $_POST["ancien_mdp"],
-    );
-}
-?>
- 
+

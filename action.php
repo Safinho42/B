@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AZZ-SAF Page Login</title>
-    <link rel="stylesheet" href="./stock.css">
-</head>
-<body>
-<div class="pharmacie">
 <?php
+include 'test.php'; 
 include_once './test.php';
- 
+
 try {
     $sql = "SELECT * FROM pharmacie;";
     $stmt = $pdo->prepare($sql);
@@ -22,6 +12,16 @@ try {
     $products = [];
 }
 ?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZZ-SAF Page Login</title>
+    <link rel="stylesheet" href="stock.css"> 
+</head>
+<body>
 <div class="pharmacie">
     <div class="page-container align-top">
         <div class="flex-col-container">
@@ -59,13 +59,13 @@ try {
                     <button class="button-outlined" type="submit">Réinitialiser les filtres</button>
                 </form>
             </div>
- 
+
             <div>
                 <?php if (isset($data["error"])): ?>
                     <span class='text-error'><?php echo htmlspecialchars($data["error"]); ?></span>
                 <?php endif; ?>
             </div>
- 
+
             <table>
                 <thead>
                     <tr>
@@ -73,7 +73,7 @@ try {
                         <th>Nom</th>  
                         <th>Prix (€)</th>
                         <th>Stock</th>
-                        <th>Date D'Expiration</th>                  
+                        <th>Date D'Expiration</th>                   
                         <th>Description</th>
                     </tr>
                 </thead>
@@ -84,7 +84,7 @@ try {
                             <td><?php echo htmlspecialchars($product['nom']); ?></td>
                             <td><?php echo htmlspecialchars($product['prix']); ?></td>
                             <td><?php echo htmlspecialchars($product['stock']); ?></td>
-                            <td><?php echo htmlspecialchars($product['date_d_expiration']); ?></td>
+                            <td><?php echo htmlspecialchars($product['date_expiration']); ?></td>
                             <td>
                             <a href="detail.php?id=<?php echo urlencode($product['id']); ?>" class="button-detail">Détail</a>
                             </td>
@@ -97,4 +97,3 @@ try {
 </div>
 </body>
 </html>
- 

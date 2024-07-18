@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,9 +16,9 @@
  
     <header>
         <div class="box">
-            <form action="action.php" method="post">
-                <input type="email" name="nom" id="nom" placeholder="Nom d'utilisateur" required><br>
-                <input type="text" name="mot de passe oublie" placeholder="mot de passe" required/><br>
+            <form action="connect-user.php" method="post">
+                <input type="email" id="email" name="email" id="nom" placeholder="Nom d'utilisateur" required><br>
+                <input type="text" id="password" name="password" placeholder="mot de passe" required/><br>
                 <input type="submit" value="Connexion">
             </form>
         </div>
@@ -33,4 +32,3 @@
     </header>
 </body>
 </html>
- 
